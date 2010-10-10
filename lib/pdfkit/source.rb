@@ -7,7 +7,7 @@ class PDFKit
     end
     
     def url?
-      @source.is_a?(String) && @source.match(/^http/)
+      @source.is_a?(String) && @source[0..5].force_encoding("UTF-8") =~ /^http/
     end
     
     def file?
